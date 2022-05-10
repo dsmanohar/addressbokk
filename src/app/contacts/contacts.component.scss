@@ -1,0 +1,33 @@
+div > div {
+  cursor: pointer;
+}
+.bg-blue {
+  background-color: #a2d5f2 !important;
+}
+.bg-trans {
+  background-color: transparent !important;
+}
+.min-width-50 {
+  min-width: 200px !important;
+}
+.bgg-dark {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+app-form {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.m-height {
+  max-height: 450px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}

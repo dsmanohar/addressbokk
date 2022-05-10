@@ -1,0 +1,19 @@
+<div class="d-flex">
+    <div >
+        <h2>Contacts</h2>
+        <p *ngIf="!this.peopleService.people.length" class="fs-6 ms-2 text-danger"> <b>No Contacts Registered</b> </p>
+        <div #container class="m-height">
+            <div *ngFor="let person of this.peopleService.people; let Index = index;" class="border p-2 min-width-50"  [ngClass]="peopleService.bgClicked[Index]? 'bg-blue':'bg-trans' "  (click) = "clickEvent({index: Index})">
+                <h2 class="m-0"> {{person.name}}</h2>
+                <p class="m-0 mt-1 h6"> <b>Email: </b> {{person.email}}</p>
+                <p class="h6"> <b>Mobile: </b> {{person.mobile}}</p>
+            </div>
+        </div>
+    </div>
+    <app-display-details *ngIf="currPerson && !peopleService.formClicked" [people]="currPerson" (deletePerson)="deletePerson()" (editPer)="editPerson()" class="d-inline-block ms-4"></app-display-details>
+</div>
+<div class="bgg-dark" *ngIf="peopleService.formClicked">
+    <app-form  [formContent]="formPerson"  (saveStatus)="formPersonToNull()" > </app-form>
+</div>
+
+

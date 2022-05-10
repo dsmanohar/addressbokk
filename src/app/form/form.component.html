@@ -1,0 +1,35 @@
+<div class="ms-5  shadow p-3 bg-white border rounded">
+    <div class="d-inline-block">
+        <form action="" class="mt-1" #form> 
+            <label for="Name" class="fw-bolder ">Name</label> <br> <input type="text" name="Name" id="Name"  class="w-100" [(ngModel)]="name"> <br> 
+            <span for="Name" [ngClass]="nameErr? 'd-block' : 'd-none' " >Name is Required  <br> </span> 
+            <label for="Email" class="fw-bolder mt-1 ">Email</label> <br> <input type="text" name="Email" id="Email" class="w-100"  [(ngModel)]="email">  <br>
+            <span for="Email" [ngClass]="emailErrReq? 'd-block' : 'd-none' ">Email is Required  <br> </span>
+            <span for="Email" [ngClass]="emailErr? 'd-block' : 'd-none' ">Invalid Email <br> </span>
+            <div class="mt-1 d-flex">
+                <div>
+                    <label for="Mobile" class="fw-bolder">Mobile</label> <br>
+                    <input type="number" name="Mobile" id="Mobile" [(ngModel)]="mobile"> 
+                </div>
+                <div class="ms-2">
+                    <label for="Landline" class="fw-bolder">Landline</label> <br>
+                    <input type="tel" name="Landline" id="Landline" class="d-block" [(ngModel)]="landline"> 
+                    <span for="Landline" [ngClass]="landlineErrReq? 'd-block' : 'd-none' " >  Landline Num Required  </span>
+                    <span for="Landline" [ngClass]="landlineErr? 'd-block' : 'd-none' " >  Invalid Landline Number  </span> 
+                </div>
+            </div>  
+            <label for="Website" class="fw-bolder">Website</label> <br>
+            <input type="text" name="Website" id="Website" class="w-100 d-block" [(ngModel)]="website"> 
+            <span for="Website" [ngClass]="webErrReq? 'd-block' : 'd-none' "> Url required <br> </span> 
+            <span for="Website" [ngClass]="webErr? 'd-block' : 'd-none' ">Invalid Url  <br> </span>
+            <label for="Address" class="fw-bolder mt-1"> Address</label> <br>
+            <textarea name="Address" id="Address" cols="45" rows="3" class="w-100" [(ngModel)]="address"></textarea>
+        </form>
+    </div>
+    <div class="d-flex  justify-content-between">
+        <button class="btn btn-success px-4 mt-2  mt-3" (click)="addPerson()" [ngClass]="formContent? 'd-none' : 'd-block'" >Add</button>  
+        <button class="btn btn-primary px-4 mt-2  mt-3 " (click)="savePerson()"  [ngClass]="formContent? 'd-block' : 'd-none'">Save</button>
+        <button class="btn btn-danger px-4 mt-2  mt-3" (click)="close()">Close</button>
+    </div>
+    
+</div>

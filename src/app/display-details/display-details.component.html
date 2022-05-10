@@ -1,0 +1,14 @@
+<div class="ms-5 shadow p-3 mt-4" id="edit-del" *ngIf="people !== null">
+    <div class="d-flex align-items-center btm p-2">
+        <p class="h2" id="d-Name">{{people.name}}</p>
+        <button class="ms-10 btn btn-success" (click)="edit.emit()">Edit</button>
+        <button class="ms-3 btn btn-danger " (click)="delete.emit()">Delete</button>  
+    </div>
+    <div class="p-2 bg-grey mt-3">
+        <p class="mt-3" id="d-Email"> <b>Email: </b> {{people.email}}</p>
+        <p class="mt-4" id="d-Mobile"> <b>Mobile: </b> {{people.mobile}} </p>
+        <p id="d-Landline"> <b>Landline: </b>{{people.landline}} </p>
+        <p class="mt-4" id="d-Web"><b>Web Address: </b>{{people.website}} </p>
+        <p class="mt-4" id="d-Add"><b>Address: </b>{{people.address}}</p>
+    </div>
+</div>
